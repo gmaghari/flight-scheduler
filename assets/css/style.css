@@ -1,0 +1,23 @@
+
+
+body {
+    background: #93add6
+}
+
+h1 {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+}
+
+.card{
+    background: white;
+    border: 2px solid #54637a;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background: #54637a;
+    color: white;
+    padding: 5px 0px 5px 5px;
+}
