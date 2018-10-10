@@ -1,7 +1,9 @@
 
 
 body {
-    background: #93add6
+    /* background: #d8d8d8 */
+    background: url("https://www.wallpaperup.com/uploads/wallpapers/2013/03/01/46808/adc63cbf675464f6782f3698a04b4b6b.jpg");
+    background-position: center;
 }
 
 h1 {
@@ -14,17 +16,13 @@ h1 {
     background: white;
     border: 2px solid #54637a;
     margin-bottom: 20px;
-    padding: 0px 10px 0px 10px;
+    /* padding: 0px 10px 0px 10px; */
 }
 
 .card-header {
     background: #54637a;
     color: white;
     padding: 5px 0px 5px 5px;
-    margin-top: 0px;
-}
-
-#trainNameInput {
-    margin: 0px 100px 0px 0px;
+    margin: 0px;
 }
 
