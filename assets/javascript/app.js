@@ -53,7 +53,7 @@ console.log(newFlight.name);
   return false;
 });
 
-//  Firebase event listener for adding trains to database and in html row
+//  Firebase event listener for adding flights to database and in html row
 database.ref().on("child_added", function(childSnapshot) {
 console.log(childSnapshot.val());
 
@@ -63,13 +63,13 @@ console.log(childSnapshot.val());
   var firstFlight = childSnapshot.val().fFlight;
   var frequency = childSnapshot.val().freq;
 
-  // first Train pushed back to make sure it comes before current time
+  // first Flight pushed back to make sure it comes before current time
   var firstTimeConverted = moment(firstFlight, "HH:mm");
   console.log(firstTimeConverted);
   var currentTime = moment().format("HH:mm");
   console.log("CURRENT TIME: " + currentTime);
 
-  // store difference between currentTime and fisrt train converted in a variable.
+  // store difference between currentTime and fisrt flight converted in a variable.
   var timeDiff = moment().diff(moment(firstTimeConverted), "minutes");
   console.log(firstFlight);
   console.log("Difference in Time: " + timeDiff);
@@ -78,10 +78,10 @@ console.log(childSnapshot.val());
   var timeRemainder = timeDiff % frequency;
   console.log(timeRemainder);
 
-  // to calculate minutes till train,we store it in a variable
+  // to calculate minutes till flight,we store it in a variable
   var minToFlight = frequency - timeRemainder;
 
-  // next train
+  // next flight
   var nxFlight = moment().add(minToFlight, "minutes").format("HH:mm");
 
 $("#flightTable>tbody").append("<tr><td>" + flightName + "</td><td>" + destination + "</td><td>" + nxFlight + "</td><td>" + frequency + "</td><td>" + minToFlight + "</td></tr>");
