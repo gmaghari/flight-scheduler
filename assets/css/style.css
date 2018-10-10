@@ -14,10 +14,17 @@ h1 {
     background: white;
     border: 2px solid #54637a;
     margin-bottom: 20px;
+    padding: 0px 10px 0px 10px;
 }
 
 .card-header {
     background: #54637a;
     color: white;
     padding: 5px 0px 5px 5px;
+    margin-top: 0px;
 }
+
+#trainNameInput {
+    margin: 0px 100px 0px 0px;
+}
+
