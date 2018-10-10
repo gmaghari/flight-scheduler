@@ -2,7 +2,7 @@
 
 body {
     /* background: #d8d8d8 */
-    background: url("https://www.wallpaperup.com/uploads/wallpapers/2013/03/01/46808/adc63cbf675464f6782f3698a04b4b6b.jpg");
+    background: url("https://cdn.wallpaper.com/main/styles/fp_1540x944/s3/galleries/15/11/t3taoyuanairport_4.jpg");
     background-position: center;
 }
 
@@ -10,6 +10,15 @@ h1 {
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bolder;
+    /* padding-top: 100px; */
+}
+
+.jumbotron {
+    background-image:url('../images/aviato-logo.jpg');
+    height:300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom:1px solid #6b2bff
 }
 
 .card{

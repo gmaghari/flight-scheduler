@@ -24,27 +24,27 @@ var database = firebase.database();
 // var firstTrain ="";
 // var frequency = "";
 
-$('#addTrainBtn').on("click", function() {
-// Input train info
-var trainName = $("#trainNameInput").val().trim();
+$('#addFlightBtn').on("click", function() {
+// Input flight info
+var flightName = $("#flightNameInput").val().trim();
 var destination = $("#destinationInput").val().trim();
-var firstTrain = moment($("#timeInput").val().trim(), "HH:mm").format("HH:mm");
+var firstFlight = moment($("#timeInput").val().trim(), "HH:mm").format("HH:mm");
 var frequency = $("#frequencyInput").val().trim();
 
-// Temporary object holding train data
-var newTrain = {
-    name: trainName,
+// Temporary object holding flight data
+var newFlight = {
+    name: flightName,
     place: destination,
-    ftrain: firstTrain,
+    fFlight: firstFlight,
     freq: frequency
     }
 
-  // uploads train data to the database
-database.ref().push(newTrain);
-console.log(newTrain.name);
+  // uploads flight data to the database
+database.ref().push(newFlight);
+console.log(newFlight.name);
 
   // clears all the text-boxes
-  $("#trainNameInput").val("");
+  $("#flightNameInput").val("");
   $("#destinationInput").val("");
   $("#timeInput").val("");
   $("#frequencyInput").val("");
@@ -58,20 +58,20 @@ database.ref().on("child_added", function(childSnapshot) {
 console.log(childSnapshot.val());
 
   // Now we store the childSnapshot values into a variable
-  var trainName = childSnapshot.val().name;
+  var flightName = childSnapshot.val().name;
   var destination = childSnapshot.val().place;
-  var firstTrain = childSnapshot.val().ftrain;
+  var firstFlight = childSnapshot.val().fFlight;
   var frequency = childSnapshot.val().freq;
 
   // first Train pushed back to make sure it comes before current time
-  var firstTimeConverted = moment(firstTrain, "HH:mm");
+  var firstTimeConverted = moment(firstFlight, "HH:mm");
   console.log(firstTimeConverted);
   var currentTime = moment().format("HH:mm");
   console.log("CURRENT TIME: " + currentTime);
 
   // store difference between currentTime and fisrt train converted in a variable.
   var timeDiff = moment().diff(moment(firstTimeConverted), "minutes");
-  console.log(firstTrain);
+  console.log(firstFlight);
   console.log("Difference in Time: " + timeDiff);
 
   // find Remainder of the time left and store in a variable
@@ -79,10 +79,10 @@ console.log(childSnapshot.val());
   console.log(timeRemainder);
 
   // to calculate minutes till train,we store it in a variable
-  var minToTrain = frequency - timeRemainder;
+  var minToFlight = frequency - timeRemainder;
 
   // next train
-  var nxTrain = moment().add(minToTrain, "minutes").format("HH:mm");
+  var nxFlight = moment().add(minToFlight, "minutes").format("HH:mm");
 
-$("#trainTable>tbody").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" + nxTrain + "</td><td>" + frequency + "</td><td>" + minToTrain + "</td></tr>");
+$("#flightTable>tbody").append("<tr><td>" + flightName + "</td><td>" + destination + "</td><td>" + nxFlight + "</td><td>" + frequency + "</td><td>" + minToFlight + "</td></tr>");
 });
