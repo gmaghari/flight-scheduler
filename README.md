@@ -1,4 +1,4 @@
-<i>Note: I changed the scheduler at the last minute from a train scheduler to a flight scheduler</i>
+<i><u>Note: I changed the scheduler at the last minute from a train scheduler to a flight scheduler</u></i>
 
 <b>Flight Scheduler</b>
 
