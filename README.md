@@ -1,3 +1,5 @@
+<i>Note: I changed the scheduler at the last minute from a train scheduler to a flight scheduler<i>
+
 <b>Flight Scheduler</b>
 
 This is an assignment for UCLA Coding Bootcamp meant to demonstrate the use of Firebase to store inputted flight data and Moment.js to calculate when the next flight will be arriving.  You can view the scheduler at - https://gmaghari.github.io/train-scheduler
