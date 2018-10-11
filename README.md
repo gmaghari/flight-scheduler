@@ -1,6 +1,6 @@
 <b>Flight Scheduler</b>
 
-This is an assignment for UCLA Coding Bootcamp meant to demonstrate the use of Firebase to store inputted flight data and Moment.js to calculate when the next flight will be arriving.  You can view the scheduler at - https://gmaghari.github.io/flight-scheduler
+This is an assignment for UCLA Coding Bootcamp meant to demonstrate the use of Firebase to store inputted flight data and Moment.js to calculate when the next flight will be arriving.  You can view the scheduler at - https://gmaghari.github.io/train-scheduler
 
 <b>Flight Name</b><br>
 Enter the name of the flight
